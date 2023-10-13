@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import TagIndex from "../components/TagIndex.astro";
 
 const { frontmatter } = Astro.props;
 const pubDate = new Date(frontmatter.pubDate).toDateString();
@@ -10,5 +11,6 @@ const pubDate = new Date(frontmatter.pubDate).toDateString();
   <p>Written by {frontmatter.author}</p>
   <p>Published on: {pubDate}</p>
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <TagIndex tags={frontmatter.tags} />
   <slot />
 </BaseLayout>
